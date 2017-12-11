@@ -63,7 +63,7 @@ if ! gcloud compute disks describe jenkins-home-test --zone ${ZONE} > /dev/null 
   echo "* Creating Jenkins home test disk"
   gcloud compute disks create jenkins-home-test --image jenkins-home-image-test --zone ${ZONE}
 else
-  echo "* Jenkins home gelb disk already exists"
+  echo "* Jenkins home test disk already exists"
 fi
 
 PASSWORD=`openssl rand -base64 15`; echo "Your Jenkins password is $PASSWORD"; sed -i.bak s#CHANGE_ME#$PASSWORD# jenkins/k8s/options
