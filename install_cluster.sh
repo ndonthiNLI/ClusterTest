@@ -59,9 +59,9 @@ else
   echo "* Jenkins home image already exists"
 fi
 
-if ! gcloud compute disks describe jenkins-home-gelb --zone ${ZONE} > /dev/null 2>&1; then
+if ! gcloud compute disks describe jenkins-home-test --zone ${ZONE} > /dev/null 2>&1; then
   echo "* Creating Jenkins home blue disk"
-  gcloud compute disks create jenkins-home-gelb --image jenkins-home-image-gelb --zone ${ZONE}
+  gcloud compute disks create jenkins-home-test --image jenkins-home-image-test --zone ${ZONE}
 else
   echo "* Jenkins home gelb disk already exists"
 fi
