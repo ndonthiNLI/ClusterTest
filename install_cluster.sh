@@ -53,14 +53,14 @@ echo "Deploying Jenkins to Google Container Engine..."
 pushd continuous-deployment-on-kubernetes
 
 if ! gcloud compute images describe jenkins-home-image-test > /dev/null 2>&1; then
-  echo "* Creating Jenkins home image"
+  echo "* Creating Jenkins home image test"
   gcloud compute images create jenkins-home-image-test --source-uri https://storage.googleapis.com/solutions-public-assets/jenkins-cd/jenkins-home-v2.tar.gz
 else
   echo "* Jenkins home image already exists"
 fi
 
 if ! gcloud compute disks describe jenkins-home-test --zone ${ZONE} > /dev/null 2>&1; then
-  echo "* Creating Jenkins home blue disk"
+  echo "* Creating Jenkins home test disk"
   gcloud compute disks create jenkins-home-test --image jenkins-home-image-test --zone ${ZONE}
 else
   echo "* Jenkins home gelb disk already exists"
