@@ -1,5 +1,6 @@
 #!/bin/bash
 clear
+set -e 
 echo " welcome to GCE cluster installation, jenkins installation in k8s ns jenkins" 
 echo " relax for some minutes and get a coffee :) " 
 error_exit()
