@@ -24,7 +24,6 @@ NETWORK=default
 ZONE=europe-west1-d
 
 # Source the config
-##. images.cfg
 if ! gcloud container clusters describe ${CLUSTER_NAME} > /dev/null 2>&1; then
   echo "* Creating Google Container Engine cluster \"${CLUSTER_NAME}\"..."
   # Create cluster
